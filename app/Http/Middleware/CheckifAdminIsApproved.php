@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class CheckifAdminIsApproved
@@ -15,6 +16,11 @@ class CheckifAdminIsApproved
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if(Auth::check()){
+            if(Auth::guard('admin')->user()->is_approved == 0){
+                return redirect()->route('admin.login')->with(session()->flash('error', 'Account needs Approval First.') );
+            }
+        }
         return $next($request);
     }
 }

@@ -37,6 +37,7 @@ Route::get('/' , HomeComponent::class)->name('home');
 Route::get('/articles' , ArticlespageComponent::class)->name('articles');
 Route::get('/article/{slug}' , ShowArticleComponent::class)->name('article.show');
 Route::get('/categories' , CategoriespageComponent::class)->name('categories');
+Route::get('/categories/{category_slug}/{subcategory_slug}' , CategoriespageComponent::class)->name('subcategories.show');
 Route::get('/about' , AboutpageComponent::class)->name('about');
 Route::get('/contact' , ContactpageComponent::class)->name('contact');
 

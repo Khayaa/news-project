@@ -2,12 +2,17 @@
 
 namespace App\Http\Livewire\Home;
 
+use App\Models\ArticleCategory;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class CategoriespageComponent extends Component
 {
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
     public function render()
     {
-        return view('livewire.home.categoriespage-component')->extends('layouts.base')->section('content');
+        $categories =  ArticleCategory::paginate(5);
+        return view('livewire.home.categoriespage-component' , ['categories' => $categories])->extends('layouts.base')->section('content');
     }
 }

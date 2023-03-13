@@ -5,6 +5,7 @@ use App\Http\Livewire\Admin\AdminEditArtcles;
 use App\Http\Livewire\Admin\AdminLoginComponent;
 use App\Http\Livewire\Admin\AdminRegisterComponent;
 use App\Http\Livewire\Admin\AdminShowArtcles;
+use App\Http\Livewire\Article\ShowArticleComponent;
 use App\Http\Livewire\Home\AboutpageComponent;
 use App\Http\Livewire\Home\ArticlespageComponent;
 use App\Http\Livewire\Home\CategoriespageComponent;
@@ -34,6 +35,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/' , HomeComponent::class)->name('home');
 Route::get('/articles' , ArticlespageComponent::class)->name('articles');
+Route::get('/article/{slug}' , ShowArticleComponent::class)->name('article.show');
 Route::get('/categories' , CategoriespageComponent::class)->name('categories');
 Route::get('/about' , AboutpageComponent::class)->name('about');
 Route::get('/contact' , ContactpageComponent::class)->name('contact');

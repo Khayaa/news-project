@@ -11,4 +11,14 @@ class ArticleCategory extends Model
     protected $fillable = [
         'name' , 'slug'
     ];
+
+    public function subcategories()
+    {
+        return $this->hasMany(SubCategory::class);
+    }
+
+    public function articles()
+    {
+        return $this->hasManyThrough(NewsArticles::class, Subcategory::class);
+    }
 }

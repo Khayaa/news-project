@@ -11,4 +11,19 @@ class NewsArticles extends Model
     protected $fillable = [
         'title' , 'user_id' , 'content' , 'slug'  , 'subcategory_id' , 'article_image','status'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function subcategory()
+    {
+        return $this->belongsTo(Subcategory::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(ArticleCategory::class)->via('subcategory');
+    }
 }

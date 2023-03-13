@@ -18,6 +18,7 @@ class CheckifAdminIsApproved
     {
         if(Auth::check()){
             if(Auth::guard('admin')->user()->is_approved == 0){
+                Auth::guard('admin')->logout();
                 return redirect()->route('admin.login')->with(session()->flash('error', 'Account needs Approval First.') );
             }
         }

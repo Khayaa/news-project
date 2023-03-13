@@ -17,7 +17,7 @@ class AdminLoginComponent extends Component
     ];
 
     public function login(){
-        $this->validate();
+       
 
         $credentials = $this->validate([
             'email' => 'required|email',
@@ -28,7 +28,8 @@ class AdminLoginComponent extends Component
         if (Auth::guard('admin')->attempt($credentials)) {
             request()->session()->regenerate();
 
-            return redirect()->intended('admin/dashboard');
+            return redirect()->to('admin/dashboard');
+            //return redirect()->intended('admin/dashboard');
         }
 
         return back()->withErrors([

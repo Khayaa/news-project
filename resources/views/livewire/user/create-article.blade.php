@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card mb-4">
-                        <div class="card-header"><strong>Create Question Paper</strong><span class="small ms-1"></span>
+                        <div class="card-header"><strong>Articles</strong><span class="small ms-1"></span>
                         </div>
                         <div class="card-body">
                             <div class="example">
@@ -29,37 +29,25 @@
                                             </div>
                                             <div class="mb-3">
                                                 <label for="slug" class="form-label">Slug</label>
-                                                <input type="email" class="form-control" id="slug" placeholder="">
+                                                <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" disabled placeholder="">
+                                                <x-input-error for="slug"></x-input-error>
                                               </div>
-                                            <div class="mb-3">
-                                                <x-label value="{{ __('Slug') }}" />
-
-                                                <x-input class="" type="text" name="slug"
-                                                    wire:model.defer='slug' disabled />
-
-                                            </div>
 
                                             <div class="mb-3">
-                                                <x-label value="{{ __('Module') }}" />
+                                                <x-label value="{{ __('Sub Category') }}" />
                                                 <select name="sub_category" wire:model.defer='sub_category'
                                                     class="form-control {{ $errors->has('module_id') ? 'is-invalid' : '' }}"
                                                     name="sub_category" id="">
-                                                    <option value="">----Select module----</option>
+                                                    <option value="">----Sub Category----</option>
                                                     @foreach ($subcategories as $subcatyegory)
                                                         <option value="{{ $subcatyegory->id }}">{{ $subcatyegory->name }}
                                                         </option>
                                                     @endforeach
 
                                                 </select>
-                                                <x-input-error for="module_id"></x-input-error>
+                                                <x-input-error for="sub_category"></x-input-error>
                                             </div>
-                                            <div class="mb-3">
-                                                <x-label value="{{ __('Year') }}" />
 
-                                                <x-input class="{{ $errors->has('year') ? 'is-invalid' : '' }}"
-                                                    type="number" name="year" wire:model.defer='year' required />
-                                                <x-input-error for="year"></x-input-error>
-                                            </div>
                                             <div class="mb-3">
                                                 <label class="form-label" for="description">Description</label>
                                                 <textarea name="description" wire:model.defer='description'

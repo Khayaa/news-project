@@ -12,7 +12,8 @@ class HomeComponent extends Component
      protected $paginationTheme = 'bootstrap';
     public function render()
     {
-        $articles  =  NewsArticles::paginate('6');
+        // $articles  =  NewsArticles::paginate('6');
+        $articles  =  NewsArticles::where('status' , 'approved')->paginate('6');
         return view('livewire.home.home-component' , ['articles' => $articles])->extends('layouts.base')->section('content');
     }
 }

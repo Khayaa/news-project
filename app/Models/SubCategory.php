@@ -14,11 +14,11 @@ class SubCategory extends Model
 
     public function category()
     {
-        return $this->belongsTo(ArticleCategory::class);
+        return $this->belongsTo(ArticleCategory::class );
     }
 
     public function articles()
     {
-        return $this->hasMany(NewsArticles::class);
+        return $this->hasMany(NewsArticles::class ,'subcategory_id');
     }
 }

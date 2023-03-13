@@ -5,7 +5,7 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="post-heading">
                         <h1>Articles By category</h1>
-                        <h2 class="subheading">Sub Category</h2>
+                        <h2 class="subheading">All Categories</h2>
 
                     </div>
                 </div>

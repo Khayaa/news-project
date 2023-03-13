@@ -25,8 +25,8 @@
                 </a>
                 <p class="post-meta">
                     Posted by
-                    <a href="#!">{{ $article->user->name }}</a>
-                    {{ $article->created_at }}
+                    <a href="#!">{{ $article->user->name }}</a> |
+                    {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $article->created_at)->format('Y-m-d'); }}
                 </p>
             </div>
             <!-- Divider-->

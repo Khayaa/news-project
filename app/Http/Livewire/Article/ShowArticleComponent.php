@@ -13,6 +13,6 @@ class ShowArticleComponent extends Component
         return view('livewire.article.show-article-component')->extends('layouts.base')->section('content');
     }
     public function mount($slug){
-        $this->article =  NewsArticles::where('slug' ,  $slug)->get();
+        $this->article =  NewsArticles::where('slug',$slug)->first();
     }
 }

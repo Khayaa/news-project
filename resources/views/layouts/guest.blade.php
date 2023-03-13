@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
+
+<head>
     <base href="./">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,14 +36,16 @@
     <!-- We use those styles to show code examples, you should remove them in your application.-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
     <link href="{{ asset('assets/core-ui/css/examples.css') }}" rel="stylesheet">
-@livewireStyles()
-  </head>
-  <body>
-   @yield('content')
+    @livewireStyles()
+</head>
+
+<body>
+{{ $slot }}
     <!-- CoreUI and necessary plugins-->
     <script src="{{ asset('assets/core-ui/vendors/@coreui/coreui/js/coreui.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/core-ui/vendors/simplebar/js/simplebar.min.js') }}"></script>
 
-@livewireScripts()
-  </body>
+    @livewireScripts()
+</body>
+
 </html>

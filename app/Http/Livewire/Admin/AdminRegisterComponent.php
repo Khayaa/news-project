@@ -36,6 +36,6 @@ class AdminRegisterComponent extends Component
     }
     public function render()
     {
-        return view('livewire.admin.admin-register-component')->extends('layouts.guest')->section('content');
+        return view('livewire.admin.admin-register-component')->layout('layouts.guest');
     }
 }

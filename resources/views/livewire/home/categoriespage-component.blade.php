@@ -17,21 +17,16 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
-
-
-
-
-
-
-
                     @foreach ($categories as $category)
                     <div class="list-group">
                         <a href="#" class="list-group-item list-group-item-action active">
                             <h2 class="section-heading">{{ $category->name }}</h2>
                         </a>
-                        @foreach ($category->subcategories as $subcategory)
+                        @forelse ($category->subcategories as $subcategory)
                         <a href="{{ route('subcategories.show',['category_slug'=>$category->slug ,'subcategory_slug'=> $subcategory->slug ]) }}" class="list-group-item list-group-item-action">{{ $subcategory->name }}</a>
-                        @endforeach
+                        @empty
+                        <p>No Sub Category</p>
+                        @endforelse
                       </div>
                       @endforeach
                       <hr>

@@ -24,20 +24,20 @@
                                             @csrf
                                             <div class="mb-3">
                                                 <label for="title" class="form-label">Title</label>
-                                                <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="title">
+                                                <input type="text" wire:model='title' class="form-control @error('title') is-invalid @enderror" id="title" placeholder="title">
                                                 <x-input-error for="title"></x-input-error>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="slug" class="form-label">Slug</label>
-                                                <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" disabled placeholder="">
+                                                <input type="text" wire:model='slug' class="form-control @error('slug') is-invalid @enderror" id="slug" disabled placeholder="">
                                                 <x-input-error for="slug"></x-input-error>
                                               </div>
 
                                             <div class="mb-3">
                                                 <x-label value="{{ __('Sub Category') }}" />
-                                                <select name="sub_category" wire:model.defer='sub_category'
-                                                    class="form-control {{ $errors->has('module_id') ? 'is-invalid' : '' }}"
-                                                    name="sub_category" id="">
+                                                <select name="subcategory_id" wire:model.defer='subcategory_id'
+                                                    class="form-control {{ $errors->has('subcategory_id') ? 'is-invalid' : '' }}"
+                                                    name="subcategory_id" id="">
                                                     <option value="">----Sub Category----</option>
                                                     @foreach ($subcategories as $subcatyegory)
                                                         <option value="{{ $subcatyegory->id }}">{{ $subcatyegory->name }}
@@ -45,24 +45,24 @@
                                                     @endforeach
 
                                                 </select>
-                                                <x-input-error for="sub_category"></x-input-error>
+                                                <x-input-error for="subcategory_id"></x-input-error>
                                             </div>
 
                                             <div class="mb-3">
-                                                <label class="form-label" for="description">Description</label>
-                                                <textarea name="description" wire:model.defer='description'
-                                                    class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" id="exampleFormControlTextarea1"
+                                                <label class="form-label" for="description">Content</label>
+                                                <textarea name="content" wire:model.defer='content'
+                                                    class="form-control {{ $errors->has('content') ? 'is-invalid' : '' }}" id="content"
                                                     rows="3"></textarea>
-                                                <x-input-error for="description"></x-input-error>
+                                                <x-input-error for="content"></x-input-error>
                                             </div>
                                             <div class="mb-3">
-                                                <label class="form-label" for="file">File</label>
-                                                <input wire:model='file'
-                                                    class="form-control {{ $errors->has('file') ? 'is-invalid' : '' }}"
-                                                    id="file" type="file">
-                                                <x-input-error for="file"></x-input-error>
+                                                <label class="form-label" for="article_image">Article Image</label>
+                                                <input wire:model='article_image'
+                                                    class="form-control {{ $errors->has('article_image') ? 'is-invalid' : '' }}"
+                                                    id="article_image" type="file">
+                                                <x-input-error for="article_image"></x-input-error>
                                             </div>
-                                            <div class="mb-3 text-center" wire:loading wire:target="file">
+                                            <div class="mb-3 text-center" wire:loading wire:target="article_image">
                                                 <div class="spinner-border" role="status">
                                                     <span class="visually-hidden">Loading...</span>
                                                 </div>

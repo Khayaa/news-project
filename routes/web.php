@@ -5,6 +5,7 @@ use App\Http\Livewire\Admin\AdminEditArtcles;
 use App\Http\Livewire\Admin\AdminLoginComponent;
 use App\Http\Livewire\Admin\AdminRegisterComponent;
 use App\Http\Livewire\Admin\AdminShowArtcles;
+use App\Http\Livewire\Admin\AdminShowByArticle;
 use App\Http\Livewire\Article\ShowArticleComponent;
 use App\Http\Livewire\Article\SubCategoryComponent;
 use App\Http\Livewire\Articles\LatestArticlesComponent;
@@ -70,6 +71,7 @@ Route::name('admin.')->prefix('admin')->group(function (){
     Route::middleware(['auth:admin'])->group(function(){
         Route::get('/dashboard' , AdminDashboard::class)->name('dashboard');
         Route::get('/articles' , AdminShowArtcles::class)->name('articles');
+        Route::get('/article/{id}' , AdminShowByArticle::class)->name('show-article');
         Route::get('/article/{id}/edit' , AdminEditArtcles::class)->name('edit.articles');
 
     });

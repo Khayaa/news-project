@@ -67,8 +67,8 @@
                                                             </svg>
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-end"><a
-                                                                class="dropdown-item" target="_blank"
-                                                                href="{{ route('article.show', ['slug' => $article->slug]) }}">Open</a>
+                                                                class="dropdown-item" 
+                                                                href="{{ route('admin.show-article', ['id' => $article->id]) }}">Open</a>
                                                                 @if ($article->status == 'approved')
                                                                 <a
                                                                 class="dropdown-item"

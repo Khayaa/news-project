@@ -66,7 +66,7 @@
                                                             </svg>
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-end"><a
-                                                                class="dropdown-item" href="#">Open</a><a
+                                                                class="dropdown-item" target="_blank" href="{{ route('article.show',['slug'=> $article->slug]) }}">Open</a><a
                                                                 class="dropdown-item" href="{{ route('article.edit', ['id' => $article->id]) }}">Edit</a><a
                                                                 {{-- class="dropdown-item text-danger"
                                                                 wire:click='delete({{ articles->id }})'>Delete</a> --}}

@@ -35,7 +35,8 @@
                                                     <div>{{ $article->title }}</div>
                                                     <div class="small text-medium-emphasis">
                                                         <span>{{ $article->user->name }}</span> | Created:
-                                                        {{ $article->created_at }}</div>
+                                                        {{ $article->created_at }}
+                                                    </div>
                                                 </td>
 
                                                 <td>
@@ -67,12 +68,20 @@
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-end"><a
                                                                 class="dropdown-item" target="_blank"
-                                                                href="{{ route('article.show', ['slug' => $article->slug]) }}">Open</a><a
+                                                                href="{{ route('article.show', ['slug' => $article->slug]) }}">Open</a>
+                                                                @if ($article->status == 'approved')
+                                                                <a
                                                                 class="dropdown-item"
-                                                                href="{{ route('article.edit', ['id' => $article->id]) }}">Edit</a><a
-                                                                {{-- class="dropdown-item text-danger"
-                                                                wire:click='delete({{ articles->id }})'>Delete</a> --}} </div>
+                                                                wire:click.prevent='Disapprove({{ $article->id }})'>Disapprove</a>
+                                                                @else
+                                                                <a
+                                                                class="dropdown-item"
+                                                                wire:click.prevent='Approve({{ $article->id }})'>Approve</a>
+                                                                @endif
+                                                                <a class="dropdown-item text-danger"
+                                                                wire:click.prevent='delete({{ $article->id }})'>Delete</a>
                                                         </div>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -82,7 +91,7 @@
 
                                 </table>
                                 <hr>
-                                    {{ $articles->links() }}
+                                {{ $articles->links() }}
                             </div>
                         </div>
                     </div>

@@ -8,8 +8,7 @@
                         <div class="card-header">
                             <div class="d-flex justify-content-between">
                                 <h4>Articles</h4>
-                                <a role="button" class="btn btn-primary"
-                                    href=""></a>
+                                <a role="button" class="btn btn-primary" href="/"></a>
                             </div>
 
                         </div>
@@ -20,9 +19,9 @@
                                     <thead class="table-light fw-semibold">
                                         <tr class="align-middle">
 
-                                            <th>Name</th>
+                                            <th>Name </th>
 
-                                            <th>Module</th>
+                                            <th>Status</th>
                                             {{-- <th class="text-center">Payment Method</th> --}}
                                             <th>Action</th>
                                             <th></th>
@@ -34,11 +33,18 @@
 
                                                 <td>
                                                     <div>{{ $article->title }}</div>
-                                                    <div class="small text-medium-emphasis"><span>New</span> {{ $article->created_at }}</div>
+                                                    <div class="small text-medium-emphasis">
+                                                        <span>{{ $article->user->name }}</span> | Created:
+                                                        {{ $article->created_at }}</div>
                                                 </td>
 
                                                 <td>
-                                                    <div> {{ $article->status }}
+                                                    <div>
+                                                        @if ($article->status == 'approved')
+                                                            <span class="badge text-bg-success">Approved</span>
+                                                        @else
+                                                            <span class="badge text-bg-danger">Disapproved</span>
+                                                        @endif
                                                     </div>
                                                     {{-- <div class="small text-medium-emphasis"><span>New</span> | Registered:
                                                     Jan 1, 2020</div> --}}
@@ -60,21 +66,23 @@
                                                             </svg>
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-end"><a
-                                                                class="dropdown-item" href="#">Open</a><a
-                                                                class="dropdown-item" href="#">Edit</a><a
-                                                                class="dropdown-item text-danger"
-                                                                wire:click='delete({{ $article->id }})'>Delete</a>
+                                                                class="dropdown-item" target="_blank"
+                                                                href="{{ route('article.show', ['slug' => $article->slug]) }}">Open</a><a
+                                                                class="dropdown-item"
+                                                                href="{{ route('article.edit', ['id' => $article->id]) }}">Edit</a><a
+                                                                {{-- class="dropdown-item text-danger"
+                                                                wire:click='delete({{ articles->id }})'>Delete</a> --}} </div>
                                                         </div>
-                                                    </div>
                                                 </td>
                                             </tr>
                                         @endforeach
 
 
                                     </tbody>
-                                    <hr>
-                                    {{ $articles->links() }}
+
                                 </table>
+                                <hr>
+                                    {{ $articles->links() }}
                             </div>
                         </div>
                     </div>

@@ -20,7 +20,7 @@
                                     <thead class="table-light fw-semibold">
                                         <tr class="align-middle">
 
-                                            <th>Name </th>
+                                            <th>Title </th>
 
                                             <th>Status</th>
                                             {{-- <th class="text-center">Payment Method</th> --}}

@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class ShowArticleComponent extends Component
 {
-    public $article ;
+    public $article;
     public function render()
     {
         return view('livewire.article.show-article-component')->extends('layouts.base')->section('content');

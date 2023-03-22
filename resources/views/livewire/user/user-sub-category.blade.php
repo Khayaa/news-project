@@ -66,7 +66,7 @@
                                                             <div class="dropdown-menu dropdown-menu-end">
 
                                                                 <a
-                                                                class="dropdown-item" target="_blank" href="{{ route('sub-category.edit',['id'=> $subcategory->id]) }}">Edit</a>
+                                                                class="dropdown-item"  href="{{ route('sub-category.edit',['id'=> $subcategory->id]) }}">Edit</a>
 
 
 

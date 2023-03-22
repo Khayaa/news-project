@@ -13,6 +13,10 @@ class ShowArticleComponent extends Component
         return view('livewire.article.show-article-component')->extends('layouts.base')->section('content');
     }
     public function mount($slug){
-        $this->article =  NewsArticles::where('slug',$slug)->first();
+        $this->article =  NewsArticles::where('slug',$slug)->where('status' , 'approved')
+        ->first();
+        if(!$this->article){
+            abort('404' ,  'PAGE NOT FOUND');
+        }
     }
 }

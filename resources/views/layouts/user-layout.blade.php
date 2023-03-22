@@ -10,7 +10,7 @@
     <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
     <meta name="author" content="Łukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-    <title>Admin Dashboard | @yield('title')</title>
+    <title> Dashboard  @yield('title')</title>
 
     {{-- <link rel="manifest" href="assets/favicon/manifest.json"> --}}
     <meta name="msapplication-TileColor" content="#ffffff">

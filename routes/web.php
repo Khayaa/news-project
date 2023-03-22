@@ -73,6 +73,7 @@ Route::name('admin.')->prefix('admin')->group(function (){
         Route::get('/articles' , AdminShowArtcles::class)->name('articles');
         Route::get('/article/{id}' , AdminShowByArticle::class)->name('show-article');
         Route::get('/article/{id}/edit' , AdminEditArtcles::class)->name('edit.articles');
+     
 
     });
 

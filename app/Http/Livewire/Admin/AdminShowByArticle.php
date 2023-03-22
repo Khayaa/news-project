@@ -12,6 +12,19 @@ class AdminShowByArticle extends Component
     {
         return view('livewire.admin.admin-show-by-article')->layout('layouts.admin-layout');
     }
+
+    public function approve(){
+        $this->article->update([
+            'status' => 'approved'
+        ]);
+        toastr()->success('Article has been Approved', 'Success');
+    }
+    public function disapprove(){
+        $this->article->update([
+            'status' => 'disapproved'
+        ]);
+        toastr()->success('Article has been Disapproved', 'Success');
+    }
     public function mount(NewsArticles $id){
         $this->article =  $id;
 

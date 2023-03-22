@@ -40,9 +40,15 @@
                     <td>
                       <p>Status</p>
                     </td>
-                    <td>{{ $article->status }}</td>
+                    <td>{{ $article->status }} <br> <div>
+                        @if ($article->status == 'approved')
+                        <button class="btn btn-danger" wire:click.prevent='disapprove'>disapprove</button>
+                        @else
+                        <button class="btn btn-primary" wire:click.prevent='approve'>Approve</button>
+                        @endif
+                        </div></td>
                   </tr>
-                 
+
                 </tbody>
               </table>
             </div>

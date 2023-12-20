@@ -1,25 +1,43 @@
-You are to create a News Management Portal using HTML, CSS, JS, PHP &amp; MySQL.
- You are to design the database
- Please use Bootstrap for layout
- Entire solution must be mobile friendly
- You are to create a very simple demo ( no fancy designs )
- You must have a working solution to present to Turmeric Digital
- If you have any questions regarding this test you may let me know
+# News Management Portal Project
 
-Requirements: Back-End
-1. Ability to store news articles in the database.
-2. News articles need to be categorized and sub-categorized.
-3. Each news article must have a minimum of one picture.
-4. Users must register &amp; login before posting a news article.
-5. Users must submit their articles.
-6. Once submitted the administrator must approve or disapprove the article.
-7. Only the administrator can delete an article.
-Requirements: Front-End
-8. Only approved articles must be displayed when viewing the website.
-9. You must have a simple easy-to-follow navigation.
-10. Guests must be able to view latest articles.
-11. Guests must be able to view all articles.
-12. Guests must be able to view all categories &amp; sub-categories.
-13. Guests must be able to view all articles in a category and/or sub-category.
-14. When articles are listed they must have a short preview text, the full article must only
-show when “read more” is clicked.
+## Introduction
+This project is focused on creating a News Management Portal using a combination of web technologies including HTML, CSS, JavaScript, PHP, and MySQL. This portal is designed to be mobile-friendly and uses Bootstrap for layout. The project includes both front-end and back-end components, with specific requirements for each.
+
+## Project Requirements
+
+### Back-End Requirements
+1. **Article Storage**: Ability to store news articles in the database.
+2. **Categorization**: News articles should be categorized and sub-categorized.
+3. **Image Inclusion**: Each news article must include at least one picture.
+4. **User Registration & Login**: Users must register and log in before posting a news article.
+5. **Article Submission**: Users must submit their articles for review.
+6. **Administrator Review**: Submitted articles must be approved or disapproved by the administrator.
+7. **Article Deletion**: Only the administrator has the authority to delete an article.
+
+### Front-End Requirements
+8. **Display Approved Articles**: Only approved articles should be displayed on the website.
+9. **Simple Navigation**: The website should feature simple, easy-to-follow navigation.
+10. **Guest Access to Latest Articles**: Guests should be able to view the latest articles.
+11. **Access to All Articles**: Guests should have access to view all articles.
+12. **Category & Sub-category Viewing**: Guests should be able to view all categories and sub-categories.
+13. **Category-Based Article Viewing**: Guests should be able to view all articles in a chosen category or sub-category.
+14. **Article Previews**: Articles should be listed with a short preview text; the full article should be accessible by clicking “read more”.
+
+## Additional Information
+- **Database Design**: Participants are required to design the database.
+- **Demo Requirement**: A simple demo of the solution must be created (no fancy designs required).
+- **Mobile Friendliness**: The entire solution must be mobile-friendly.
+- **Submission**: A working solution must be presented to Turmeric Digital.
+- **Queries**: For any questions regarding this test, please contact the provided point of contact.
+
+## Development Notes
+- **Bootstrap Usage**: Please use Bootstrap for the layout design.
+- **Code Organization**: Ensure the code is well-organized and documented.
+- **Testing**: Thoroughly test each functionality as per the requirements.
+
+## Contribution
+- This project is open for contributions. Please ensure that your contributions adhere to the project guidelines and requirements.
+
+---
+
+This README is designed to guide developers and contributors through the requirements and expectations of the News Management Portal project. For further assistance or queries, please reach out to the project maintainers.

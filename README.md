@@ -27,17 +27,4 @@ This project is focused on creating a News Management Portal using a combination
 - **Database Design**: Participants are required to design the database.
 - **Demo Requirement**: A simple demo of the solution must be created (no fancy designs required).
 - **Mobile Friendliness**: The entire solution must be mobile-friendly.
-- **Submission**: A working solution must be presented to Turmeric Digital.
-- **Queries**: For any questions regarding this test, please contact the provided point of contact.
 
-## Development Notes
-- **Bootstrap Usage**: Please use Bootstrap for the layout design.
-- **Code Organization**: Ensure the code is well-organized and documented.
-- **Testing**: Thoroughly test each functionality as per the requirements.
-
-## Contribution
-- This project is open for contributions. Please ensure that your contributions adhere to the project guidelines and requirements.
-
----
-
-This README is designed to guide developers and contributors through the requirements and expectations of the News Management Portal project. For further assistance or queries, please reach out to the project maintainers.
